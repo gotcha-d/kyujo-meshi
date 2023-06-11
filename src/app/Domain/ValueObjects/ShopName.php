@@ -4,11 +4,15 @@ namespace App\Domain\ValueObjects;
 
 use InvalidArgumentException;
 
+/**
+ * 店名値オブジェクト
+ * 
+ */
 class ShopName
 {
     private const MAX_LENGTH = 30;
-    
-    private $value;
+
+    private string $value;
 
     public function __construct($value)
     {
@@ -16,5 +20,15 @@ class ShopName
             throw new InvalidArgumentException('店名は1文字以上30文字以下である必要があります。');
         }
         $this->value = $value;
+    }
+
+    /**
+     * 店名の文字列を返却する
+     * 
+     * @return string $value
+     */
+    public function value()
+    {
+        return $this->value;
     }
 }

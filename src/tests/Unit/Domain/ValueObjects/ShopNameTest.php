@@ -76,7 +76,17 @@ class ShopNameTest extends TestCase
         $shop_name = new ShopName($given_name);
     }
 
+    /**
+     * 店名の文字列を返却すること
+     * 
+     */
+    public function testValueSuccess()
+    {
+        $given_name = 'テスト店名';
+        $shop_name = new ShopName($given_name);
 
+        $this->assertEquals($given_name, $shop_name->value());
+    }
     
 
 
